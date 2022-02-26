@@ -1,0 +1,23 @@
+배포 초기화
+eb init --interactive
+1. EB CLI를 이용한 환경 생성
+eb create --database --elb-type application --instance-type t2.micro
+
+2 EB FRONT 생성
+eb create --elb-type application --instance-type t2.micro
+
+eb setenv SPRING_PROFILES_ACTIVE=prod
+
+	Creating load balancer failed Reason: At least two subnets in two different Availability Zones must be specified 
+(Service: AmazonElasticLoadBalancing; Status Code: 400; Error Code: ValidationError; Request ID: 5ed509be-cbfd-463a-b09a-b078a3d1ab28; Proxy: null)
+
+
+2022-02-22 21:24:38 UTC+0900	
+ERROR
+Cannot update ELB target group when there is no ELB in the group resources
+2022-02-22 21:24:37 UTC+0900	
+ERROR
+Creating RDS database failed Reason: No default subnet detected in VPC. Please contact AWS Support to recreate default Subnets. (Service: AmazonRDS; Status Code: 400; Error Code: InvalidSubnet; Request ID: c09c999e-d834-451d-b56a-28abc25635d8; Proxy: null)
+2022-02-22 21:24:37 UTC+0900	
+ERROR
+Stack named 'awseb-e-xqqzwuzjzx-stack' aborted operation. Current state: 'CREATE_FAILED' Reason: The following resource(s) failed to create: [AWSEBV2LoadBalancer, AWSEBRDSDatabase].
